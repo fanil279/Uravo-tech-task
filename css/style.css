@@ -3,6 +3,8 @@
     --green: #082600;
     --gold: #c4b70e;
     --white: #eeeee8;
+    --header-height: max(54px, 3.75vw);
+    scroll-padding-top: var(--header-height);
 }
 
 * {
@@ -54,10 +56,16 @@ button:focus-visible {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 3.75vw;
-    min-height: 54px;
+    height: var(--header-height);
     padding-left: 1.4vw;
     padding-right: 1.4vw;
+    background-color: transparent;
+    transition: background-color .18s;
+}
+
+.site-header.is-scrolled,
+.menu-open .site-header {
+    background-color: var(--green);
 }
 
 .brand {
@@ -96,7 +104,7 @@ button:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: max(3.75vw, 54px);
+    min-height: var(--header-height);
     padding: 0 .8vw;
     font-size: 1vw;
     font-weight: 700;
@@ -191,6 +199,265 @@ button:focus-visible {
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .logo-slider-track.is-looping {
+        animation: none;
+    }
+
+    .logo-slider-group + .logo-slider-group {
+        display: none;
+    }
+
+    .site-header,
+    .primary-navigation a {
+        transition: none;
+    }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    .logo-slider {
+        overflow-x: auto;
+    }
+
+    .logo-slider-track {
+        margin-left: 0;
+        padding-left: var(--logo-gap);
+    }
+}
+
+.intro {
+    position: relative;
+    display: grid;
+    grid-template-columns: 25.69vw minmax(0, 1fr);
+    overflow: hidden;
+    padding: 5.97vw 13.89vw 1.39vw;
+    background: #fdfdfd;
+    color: #000;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: -0.5vw;
+    left: 3.5vw;
+    width: 13.5vw;
+    aspect-ratio: 293 / 461;
+    background: url('../images/decor/diamonds-green-sp.png') left 80% / 100% auto no-repeat;
+    pointer-events: none;
+}
+
+.intro-title,
+.intro-content {
+    position: relative;
+}
+
+.intro p {
+    margin: 0;
+}
+
+.intro-title-en,
+.intro-statement {
+    font-size: 2.36vw;
+    line-height: 1.7;
+}
+
+.intro-title-en,
+.intro-link {
+    font-family: "Shippori Mincho";
+}
+
+.intro-title-ja {
+    font-size: 1.67vw;
+    line-height: 1.45;
+}
+
+.intro-statement {
+    color: #081200;
+}
+
+.intro-blank {
+    display: inline-block;
+    width: 2em;
+    text-align: center;
+}
+
+.intro-copy {
+    display: grid;
+    gap: 2.01vw;
+    margin-top: 3.61vw;
+    font-size: 1.11vw;
+    line-height: 1.8125;
+}
+
+.intro-copy-mobile {
+    display: none;
+}
+
+.intro-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 12.5vw;
+    margin-top: 3.89vw;
+    padding-bottom: .35vw;
+    border-bottom: 1px solid currentColor;
+    color: var(--green);
+    font-size: 1.81vw;
+    line-height: 1.45;
+}
+
+.intro-link img {
+    width: 1.6vw;
+}
+
+.intro-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+.service {
+    padding: 4.03vw 0 8.06vw;
+    background: #e9e9e9 url('../images/decor/diamonds-gold.png') right 2.5vw top 5.55vw / 13.6vw auto no-repeat;
+    color: #081200;
+    font-weight: 700;
+}
+
+.service-eyebrow,
+.service h2,
+.service-intro {
+    margin: 0;
+    text-align: center;
+}
+
+.service-eyebrow {
+    color: var(--gold);
+    font-size: max(15px, 1.11vw);
+    letter-spacing: .08em;
+}
+
+.service h2 {
+    margin-top: .25em;
+    color: var(--green);
+    font-size: 3.47vw;
+    line-height: 1.1;
+    letter-spacing: .035em;
+}
+
+.service-intro {
+    margin: 5.55vw auto 1vw;
+    max-width: 72vw;
+    font-size: max(14px, 1.25vw);
+    line-height: 1.8;
+    letter-spacing: .06em;
+}
+
+.service-intro-mobile {
+    display: none;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3.47vw;
+    width: 72%;
+    margin-inline: auto;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.service-card-visual {
+    position: relative;
+}
+
+.service-card-visual > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 488 / 255;
+    object-fit: cover;
+}
+
+.service-card-label {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: .65vw .6vw;
+    background: #050e00;
+    font-size: 1.67vw;
+    line-height: 1.35;
+}
+
+.service-card-number {
+    margin-right: .45em;
+    font-size: .7em;
+    letter-spacing: .06em;
+}
+
+.service-card-number strong {
+    font-size: 1.43em;
+}
+
+.service-card-panel {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: -2.15vw 5.2% 0;
+    padding: 3.2vw 2.7vw 1.6vw;
+    position: relative;
+    border: 1px solid var(--green);
+    background: radial-gradient(ellipse at 0 0, #24570f, transparent 52%),
+        linear-gradient(110deg, #041000 33%, #293c25);
+}
+
+.service-card-panel h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.53vw;
+    line-height: 1.35;
+}
+
+.service-card-panel h3 span {
+    display: block;
+    margin-top: .48em;
+    font-size: 2.36vw;
+}
+
+.service-card-panel p {
+    margin: 1.1vw 0 2vw;
+    font-size: max(14px, 1.11vw);
+    line-height: 1.82;
+}
+
+.service-card-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    align-self: flex-end;
+    min-width: 8.7vw;
+    margin-top: auto;
+    padding-bottom: .14em;
+    border-bottom: 1px solid currentColor;
+    font-size: max(15px, 1.18vw);
+    letter-spacing: .06em;
+}
+
+.service-card-link img {
+    width: 1em;
+    filter: brightness(0) invert(1);
+}
+
+.service-card-link:focus-visible {
+    outline-offset: 4px;
+}
+
 [hidden] {
     display: none !important;
 }
@@ -212,11 +479,159 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
+    .service {
+        padding: 0 4.27vw 11vw;
+        background-position: right top;
+        background-size: 16vw auto;
+    }
+
+    .service h2 {
+        margin-top: .14em;
+        font-size: 9.33vw;
+    }
+
+    .service-eyebrow {
+        font-size: max(15px, 4.27vw);
+    }
+
+    .service-intro-desktop {
+        display: none;
+    }
+
+    .service-intro-mobile {
+        display: block;
+        max-width: none;
+        margin: 12vw 0 9vw;
+        text-align: left;
+        font-size: max(15px, 4.8vw);
+    }
+
+    .service-grid {
+        grid-template-columns: minmax(0, 1fr);
+        width: auto;
+        gap: 8.53vw;
+    }
+
+    .service-card-label {
+        position: relative;
+        padding: .2em .55em;
+        font-size: max(14px, 4.8vw);
+    }
+
+    .service-card-number {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        padding: .42em .6em;
+        background: inherit;
+        font-size: .9em;
+    }
+
+    .service-card-number strong {
+        font-size: inherit;
+    }
+
+    .service-card-panel {
+        margin: 0;
+        padding: 9.6vw 4.53vw 8vw;
+        border: 0;
+        background: radial-gradient(ellipse at 4% 20%, #367f1b, transparent 46%),
+            linear-gradient(110deg, #041000 40%, #293c25);
+    }
+
+    .service-card-panel h3 {
+        font-size: max(15px, 4.53vw);
+    }
+
+    .service-card-panel h3 span {
+        font-size: 7.2vw;
+    }
+
+    .service-card-panel p {
+        margin: 4.8vw 0 8.5vw;
+        font-size: max(14px, 4.27vw);
+    }
+
+    .service-card-link {
+        align-self: center;
+        min-width: 33.33vw;
+        font-size: max(15px, 4.53vw);
+    }
+
+    :root {
+        --header-height: 60px;
+    }
+
+    body {
+        padding-top: var(--header-height);
+    }
+
+    .intro {
+        display: block;
+        padding: 0 4.4vw 11.2vw;
+    }
+
+    .intro::before {
+    background: url('../images/decor/diamonds-gray.png') no-repeat;
+    background-size: cover;
+    width: 36.07vw;
+    clip-path: none;
+    transform: translateX(-2vw);
+}
+
+    .intro-title {
+        padding-top: 16.3vw;
+        padding-left: 29.2vw;
+        min-height: 70.4vw;
+    }
+
+    .intro-title-en {
+        font-size: 6.93vw;
+        line-height: 1.5;
+        white-space: nowrap;
+    }
+
+    .intro .intro-title-ja {
+        margin-top: .8vw;
+        font-size: 5.33vw;
+        line-height: 1.6;
+    }
+
+    .intro-desktop-break,
+    .intro-copy-desktop {
+        display: none;
+    }
+
+    .intro-statement {
+        color: inherit;
+        font-size: 5.6vw;
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    .intro-copy-mobile {
+        display: grid;
+        margin-top: 9.6vw;
+        gap: 7.73vw;
+        font-size: 4.27vw;
+        line-height: 1.8125;
+        letter-spacing: .07em;
+    }
+
+    .intro-link {
+        width: 47.47vw;
+        margin: 10.4vw auto 0;
+        padding: 0 5.07vw 1.07vw 0;
+        font-size: 5.6vw;
+    }
+
+    .intro-link img {
+        width: 6.13vw;
+    }
+
     .site-header {
-        height: 60px;
-        min-height: 0;
         padding: 0 16px 0 18px;
-        background: var(--green);
+        background-color: var(--green);
     }
 
     .brand-desktop {
@@ -273,7 +688,7 @@ button:focus-visible {
     .primary-navigation {
         display: none;
         position: fixed;
-        inset: 60px 0 0;
+        inset: var(--header-height) 0 0;
         overflow-y: auto;
         overscroll-behavior: contain;
         background: var(--green);
@@ -362,7 +777,6 @@ button:focus-visible {
     }
 
     .hero {
-        margin-top: 60px;
         aspect-ratio: 750 / 1228;
         background-image: radial-gradient(ellipse at 12% 35%, #308b16 0%, #1c590d 22%, transparent 50%), linear-gradient(105deg, #123508, #031000 55%, #293e25);
     }

@@ -1,8 +1,17 @@
 'use strict';
 
+const siteHeader = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#primary-navigation');
 const mobileViewport = window.matchMedia('(max-width: 768px)');
+
+function syncHeaderScrollState() {
+	siteHeader.classList.toggle('is-scrolled', window.scrollY > 780);
+}
+
+window.addEventListener('scroll', syncHeaderScrollState, { passive: true });
+window.addEventListener('pageshow', syncHeaderScrollState);
+syncHeaderScrollState();
 
 function setMenuOpen(open, returnFocus = false) {
 	menuToggle.setAttribute('aria-expanded', String(open));
