@@ -141,6 +141,7 @@ button:focus-visible {
 .hero {
     position: relative;
     width: 100%;
+    height: 100vh;
     aspect-ratio: 1440 / 786;
     background: var(--green) url('../images/hero/hero-photo-bg.png') center / 100% 100% no-repeat;
     overflow: hidden;
@@ -480,9 +481,10 @@ button:focus-visible {
 
 @media (max-width: 768px) {
     .service {
-        padding: 0 4.27vw 11vw;
+        padding: 6vh 4.27vw 11vw;
         background-position: right top;
         background-size: 16vw auto;
+        background-image: none;
     }
 
     .service h2 {
@@ -510,6 +512,14 @@ button:focus-visible {
         grid-template-columns: minmax(0, 1fr);
         width: auto;
         gap: 8.53vw;
+    }
+
+    .service-card-visual {
+        background: url('../images/service/service-mobile.jpg') center / cover no-repeat;
+    }
+
+    .service-card-visual > img {
+        opacity: 0;
     }
 
     .service-card-label {
@@ -779,6 +789,7 @@ button:focus-visible {
     .hero {
         aspect-ratio: 750 / 1228;
         background-image: radial-gradient(ellipse at 12% 35%, #308b16 0%, #1c590d 22%, transparent 50%), linear-gradient(105deg, #123508, #031000 55%, #293e25);
+        height: auto;
     }
 
     .hero-mobile-art {
