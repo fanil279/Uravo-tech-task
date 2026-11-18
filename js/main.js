@@ -76,3 +76,82 @@ if (logoTrack) {
 	logoTrack.append(logoTrack.firstElementChild.cloneNode(true));
 	logoTrack.classList.add('is-looping');
 }
+
+const memberSlider = document.querySelector('.member-slider');
+if (memberSlider) {
+	const track = memberSlider.querySelector('.member-track');
+	const viewport = memberSlider.querySelector('.member-viewport');
+	const previous = memberSlider.querySelector('.member-prev');
+	const next = memberSlider.querySelector('.member-next');
+	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+	let pending = Promise.resolve();
+	let animation;
+	let swipe;
+
+	track.prepend(track.lastElementChild);
+	track.classList.add('is-looping');
+
+	function move(direction) {
+		pending = pending.then(async () => {
+			if (!reducedMotion.matches) {
+				animation = track.animate(
+					[
+						{ transform: 'translateX(0)' },
+						{ transform: `translateX(calc(${-direction} * var(--member-step)))` }
+					],
+					{ duration: 300, easing: 'ease-out', fill: 'forwards' }
+				);
+				await animation.finished;
+			}
+
+			if (direction > 0) {
+				track.append(track.firstElementChild);
+			} else {
+				track.prepend(track.lastElementChild);
+			}
+			animation?.cancel();
+			animation = undefined;
+		});
+	}
+
+	reducedMotion.addEventListener('change', () => {
+		if (reducedMotion.matches) animation?.finish();
+	});
+
+	const mobileLayout = window.matchMedia('(max-width: 768px)');
+
+	previous.addEventListener('click', () => move(-1));
+	next.addEventListener('click', () => move(1));
+
+	memberSlider.addEventListener('keydown', (event) => {
+		if (event.target !== previous && event.target !== next) return;
+		if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+		event.preventDefault();
+		move(event.key === 'ArrowLeft' ? -1 : 1);
+	});
+
+    viewport.addEventListener('pointerdown', (event) => {
+        if (!event.isPrimary) return;
+
+        const isTouch = event.pointerType === 'touch';
+        const isMouseDrag =
+            event.pointerType === 'mouse' && event.button === 0 && mobileLayout.matches;
+        if (!isTouch && !isMouseDrag) return;
+
+        swipe = { id: event.pointerId, x: event.clientX, y: event.clientY };
+        viewport.setPointerCapture(event.pointerId);
+    });
+
+	viewport.addEventListener('pointerup', (event) => {
+		if (event.pointerId !== swipe?.id) return;
+		const x = event.clientX - swipe.x;
+		const y = event.clientY - swipe.y;
+		swipe = undefined;
+		if (Math.abs(x) >= 35 && Math.abs(x) > Math.abs(y)) move(x < 0 ? 1 : -1);
+	});
+
+	viewport.addEventListener('pointercancel', (event) => {
+		if (event.pointerId === swipe?.id) swipe = undefined;
+	});
+}
