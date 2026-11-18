@@ -470,18 +470,17 @@ button:focus-visible {
     .case-study {
         position: relative;
         isolation: isolate;
+        overflow: hidden;
+        background: #fafafa;
     }
 
     .case-study::before {
-        content: '';
+        content: "";
         position: absolute;
-        z-index: -1;
         inset: 0;
-        background:
-            repeating-linear-gradient(24deg, transparent 0 4.8vw, #dfe3df 4.8vw calc(4.8vw + 1px)),
-            repeating-linear-gradient(145deg, transparent 0 5.6vw, #dfe3df 5.6vw calc(5.6vw + 1px)),
-            repeating-linear-gradient(76deg, transparent 0 7vw, #e4e7e4 7vw calc(7vw + 1px));
-        mask-image: radial-gradient(ellipse at 51% 57%, transparent 61%, #000 73%);
+        z-index: -1;
+        pointer-events: none;
+        background: url("../images/case/case-study-mesh.png") center / 100% 100% no-repeat;
     }
 }
 
