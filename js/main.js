@@ -61,3 +61,9 @@ document.addEventListener('keydown', (event) => {
 });
 
 mobileViewport.addEventListener('change', () => setMenuOpen(false));
+
+const logoTrack = document.querySelector('.logo-slider-track');
+if (logoTrack) {
+	logoTrack.append(logoTrack.firstElementChild.cloneNode(true));
+	logoTrack.classList.add('is-looping');
+}

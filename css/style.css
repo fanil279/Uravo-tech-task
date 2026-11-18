@@ -151,6 +151,46 @@ button:focus-visible {
     display: none;
 }
 
+.logo-slider {
+    --logo-width: max(112px, 12.43vw);
+    --logo-gap: max(24px, 4.24vw);
+    overflow: hidden;
+    padding: clamp(20px, 2.15vw, 48px) 0 clamp(12px, 0.84vw, 20px);
+    background: #ECECEC;
+}
+
+.logo-slider-track {
+    display: flex;
+    width: max-content;
+    margin-left: calc(var(--logo-width) / -2);
+}
+
+.logo-slider-group {
+    display: flex;
+    flex: none;
+    gap: var(--logo-gap);
+    padding-right: var(--logo-gap);
+}
+
+.logo-slider-group img {
+    display: block;
+    width: var(--logo-width);
+    aspect-ratio: 179 / 54;
+    object-fit: contain;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo-slider-track.is-looping {
+        animation: logo-slider-scroll 36s linear infinite;
+    }
+}
+
+@keyframes logo-slider-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 [hidden] {
     display: none !important;
 }
