@@ -155,15 +155,10 @@ button:focus-visible {
     color: #080d00;
 }
 
-main {
-    margin-top: var(--header-height);
-}
-
 .hero {
     position: relative;
     width: 100%;
     height: auto;
-    margin-top: -30px;
     aspect-ratio: 1440 / 786;
     background: var(--green) url('../images/hero/hero-photo-bg.png') center / 100% 100% no-repeat;
     overflow: hidden;
@@ -1714,11 +1709,6 @@ main {
         width: 60px;
     }
 
-    .hero {
-        max-width: 520px;
-        margin-inline: auto;
-    }
-
     .intro,
     .service,
     .case-study {
@@ -1772,6 +1762,7 @@ main {
 
     .hero {
         height: auto;
+        margin-top: -30px;
     }
 
     .intro,
