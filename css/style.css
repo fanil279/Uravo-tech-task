@@ -1,4 +1,5 @@
 :root {
+    --mobile-unit: 1vw;
     color-scheme: light;
     --green: #082600;
     --gold: #c4b70e;
@@ -890,7 +891,7 @@ button:focus-visible {
 
     .footer-navigation {
         margin: 0;
-        font-size: 3.8vw;
+        font-size: calc(3.8 * var(--mobile-unit));
     }
 
     .footer-columns {
@@ -926,15 +927,15 @@ button:focus-visible {
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        height: calc(17.5vw - 1px);
-        padding: 0 4.6vw 0 4.3vw;
+        height: calc(calc(17.5 * var(--mobile-unit)) - 1px);
+        padding: 0 calc(4.6 * var(--mobile-unit)) 0 calc(4.3 * var(--mobile-unit));
         font-size: inherit;
         letter-spacing: .1em;
     }
 
     .footer-submenu a {
-        height: 17.5vw;
-        padding-inline-start: 8.6vw;
+        height: calc(17.5 * var(--mobile-unit));
+        padding-inline-start: calc(8.6 * var(--mobile-unit));
         border-top: 1px solid #7c7c7c;
     }
 
@@ -950,8 +951,8 @@ button:focus-visible {
         display: grid;
         align-items: center;
         justify-items: end;
-        width: max(44px, calc(4.6vw + 11px));
-        padding: 0 4.6vw 0 0;
+        width: max(44px, calc(calc(4.6 * var(--mobile-unit)) + 11px));
+        padding: 0 calc(4.6 * var(--mobile-unit)) 0 0;
         border: 0;
         background: transparent;
     }
@@ -974,19 +975,19 @@ button:focus-visible {
     .footer-brand-mobile {
         display: grid;
         place-items: center;
-        height: 40.6vw;
+        height: calc(40.6 * var(--mobile-unit));
     }
 
     .footer-brand-mobile .brand-mobile img {
         display: block;
-        width: 45vw;
+        width: calc(45 * var(--mobile-unit));
         max-width: 240px;
         height: auto;
     }
 
     .footer-copyright {
         min-height: 0;
-        height: 30vw;
+        height: calc(30 * var(--mobile-unit));
         background: #ececec;
         font-size: 1rem;
     }
@@ -1063,13 +1064,13 @@ button:focus-visible {
     }
 
     .cta-link {
-        min-height: max(170px, 56vw);
+        min-height: max(170px, calc(56 * var(--mobile-unit)));
         padding-inline: 9.6%;
         gap: 16px;
     }
 
     .cta h2 {
-        font-size: clamp(2rem, 9.07vw, 3.125rem);
+        font-size: clamp(2rem, calc(9.07 * var(--mobile-unit)), 3.125rem);
     }
 
     .cta-link#contact {
@@ -1099,25 +1100,25 @@ button:focus-visible {
 
 @media (max-width: 768px) {
     .members {
-        padding: 14.5vw 0 9.6vw;
+        padding: calc(14.5 * var(--mobile-unit)) 0 calc(9.6 * var(--mobile-unit));
     }
 
     .members-label {
-        font-size: max(15px, 4.27vw);
+        font-size: max(15px, calc(4.27 * var(--mobile-unit)));
     }
 
     .members h2 {
         margin-top: .14em;
-        font-size: 9.33vw;
+        font-size: calc(9.33 * var(--mobile-unit));
     }
 
     .member-slider {
         width: 100%;
-        margin-top: 15vw;
+        margin-top: calc(15 * var(--mobile-unit));
     }
 
     .member-track {
-        --member-gap: 2.67vw;
+        --member-gap: calc(2.67 * var(--mobile-unit));
         --member-width: 73.87%;
     }
 
@@ -1126,7 +1127,7 @@ button:focus-visible {
     }
 
     .member-card {
-        font-size: max(15px, 4.27vw);
+        font-size: max(15px, calc(4.27 * var(--mobile-unit)));
     }
 
     .member-card img {
@@ -1135,7 +1136,7 @@ button:focus-visible {
     }
 
     .member-card .member-name {
-        font-size: max(19px, 5.33vw);
+        font-size: max(19px, calc(5.33 * var(--mobile-unit)));
     }
 
     .member-arrow {
@@ -1149,52 +1150,52 @@ button:focus-visible {
 
     .members-link,
     .news-link {
-        width: 47.47vw;
-        padding-inline: 2.7vw;
-        font-size: 5.6vw;
+        width: calc(47.47 * var(--mobile-unit));
+        padding-inline: calc(2.7 * var(--mobile-unit));
+        font-size: calc(5.6 * var(--mobile-unit));
     }
 
     .members-link {
-        margin-top: 18.7vw;
+        margin-top: calc(18.7 * var(--mobile-unit));
     }
 
     .members-link img,
     .news-link img {
-        width: 6.13vw;
+        width: calc(6.13 * var(--mobile-unit));
     }
 
     .news {
-        padding: 2.67vw 0 10.4vw;
+        padding: calc(2.67 * var(--mobile-unit)) 0 calc(10.4 * var(--mobile-unit));
         color: var(--green);
     }
 
     .news-label {
         color: #8b8000;
-        font-size: 4.27vw;
+        font-size: calc(4.27 * var(--mobile-unit));
     }
 
     .news h2 {
         margin-top: .14em;
-        font-size: 9.33vw;
+        font-size: calc(9.33 * var(--mobile-unit));
     }
 
     .news-list {
         width: 91.73%;
-        margin-top: 11.6vw;
+        margin-top: calc(11.6 * var(--mobile-unit));
         border-top: 1px solid #e5e5e5;
     }
 
     .news-item,
     .news-list li:first-child .news-item {
-        grid-template-columns: 26.67vw max-content 1fr;
-        row-gap: .9vw;
-        padding: 4.1vw 0 6.2vw;
+        grid-template-columns: calc(26.67 * var(--mobile-unit)) max-content 1fr;
+        row-gap: calc(.9 * var(--mobile-unit));
+        padding: calc(4.1 * var(--mobile-unit)) 0 calc(6.2 * var(--mobile-unit));
         border-color: #e5e5e5;
-        font-size: 4.27vw;
+        font-size: calc(4.27 * var(--mobile-unit));
     }
 
     .news-date {
-        font-size: 4.8vw;
+        font-size: calc(4.8 * var(--mobile-unit));
     }
 
     .news-date span {
@@ -1202,8 +1203,8 @@ button:focus-visible {
     }
 
     .news-tag {
-        padding: 1.52vw 4.4vw;
-        font-size: 3.2vw;
+        padding: calc(1.52 * var(--mobile-unit)) calc(4.4 * var(--mobile-unit));
+        font-size: calc(3.2 * var(--mobile-unit));
     }
 
     .news-copy {
@@ -1217,27 +1218,27 @@ button:focus-visible {
     }
 
     .news-link {
-        margin-top: 10.4vw;
+        margin-top: calc(10.4 * var(--mobile-unit));
     }
 
     .case-study {
-        padding: 0 4.27vw 9.6vw;
+        padding: 0 calc(4.27 * var(--mobile-unit)) calc(9.6 * var(--mobile-unit));
         background: #fdfdfd;
     }
 
     .case-study-label {
-        font-size: max(15px, 4.27vw);
+        font-size: max(15px, calc(4.27 * var(--mobile-unit)));
     }
 
     .case-study h2 {
         margin-top: .14em;
-        font-size: 9.33vw;
+        font-size: calc(9.33 * var(--mobile-unit));
     }
 
     .case-grid {
         grid-template-columns: minmax(0, 1fr);
-        gap: 7.47vw;
-        margin-top: 15vw;
+        gap: calc(7.47 * var(--mobile-unit));
+        margin-top: calc(15 * var(--mobile-unit));
     }
 
     .case-card > img {
@@ -1245,42 +1246,42 @@ button:focus-visible {
     }
 
     .case-card h3 {
-        font-size: max(18px, 5.33vw);
+        font-size: max(18px, calc(5.33 * var(--mobile-unit)));
     }
 
     .case-card p {
-        font-size: max(14px, 4.27vw);
+        font-size: max(14px, calc(4.27 * var(--mobile-unit)));
     }
 
     .case-tags {
-        font-size: max(11px, 3.33vw);
+        font-size: max(11px, calc(3.33 * var(--mobile-unit)));
     }
 
     .case-study-link {
-        width: 47.47vw;
-        margin-top: 10.67vw;
-        padding-inline: 2.7vw;
-        font-size: 5.6vw;
+        width: calc(47.47 * var(--mobile-unit));
+        margin-top: calc(10.67 * var(--mobile-unit));
+        padding-inline: calc(2.7 * var(--mobile-unit));
+        font-size: calc(5.6 * var(--mobile-unit));
     }
 
     .case-study-link img {
-        width: 6.13vw;
+        width: calc(6.13 * var(--mobile-unit));
     }
 
     .service {
-        padding: 6vh 4.27vw 11vw;
+        padding: 6vh calc(4.27 * var(--mobile-unit)) calc(11 * var(--mobile-unit));
         background-position: right top;
-        background-size: 16vw auto;
+        background-size: calc(16 * var(--mobile-unit)) auto;
         background-image: none;
     }
 
     .service h2 {
         margin-top: .14em;
-        font-size: 9.33vw;
+        font-size: calc(9.33 * var(--mobile-unit));
     }
 
     .service-eyebrow {
-        font-size: max(15px, 4.27vw);
+        font-size: max(15px, calc(4.27 * var(--mobile-unit)));
     }
 
     .service-intro-desktop {
@@ -1290,15 +1291,15 @@ button:focus-visible {
     .service-intro-mobile {
         display: block;
         max-width: none;
-        margin: 12vw 0 9vw;
+        margin: calc(12 * var(--mobile-unit)) 0 calc(9 * var(--mobile-unit));
         text-align: left;
-        font-size: max(15px, 4.8vw);
+        font-size: max(15px, calc(4.8 * var(--mobile-unit)));
     }
 
     .service-grid {
         grid-template-columns: minmax(0, 1fr);
         width: auto;
-        gap: 8.53vw;
+        gap: calc(8.53 * var(--mobile-unit));
     }
 
     .service-card-visual {
@@ -1312,7 +1313,7 @@ button:focus-visible {
     .service-card-label {
         position: relative;
         padding: .2em .55em;
-        font-size: max(14px, 4.8vw);
+        font-size: max(14px, calc(4.8 * var(--mobile-unit)));
     }
 
     .service-card-number {
@@ -1330,29 +1331,29 @@ button:focus-visible {
 
     .service-card-panel {
         margin: 0;
-        padding: 9.6vw 4.53vw 8vw;
+        padding: calc(9.6 * var(--mobile-unit)) calc(4.53 * var(--mobile-unit)) calc(8 * var(--mobile-unit));
         border: 0;
         background: radial-gradient(ellipse at 4% 20%, #367f1b, transparent 46%),
             linear-gradient(110deg, #041000 40%, #293c25);
     }
 
     .service-card-panel h3 {
-        font-size: max(15px, 4.53vw);
+        font-size: max(15px, calc(4.53 * var(--mobile-unit)));
     }
 
     .service-card-panel h3 span {
-        font-size: 7.2vw;
+        font-size: calc(7.2 * var(--mobile-unit));
     }
 
     .service-card-panel p {
-        margin: 4.8vw 0 8.5vw;
-        font-size: max(14px, 4.27vw);
+        margin: calc(4.8 * var(--mobile-unit)) 0 calc(8.5 * var(--mobile-unit));
+        font-size: max(14px, calc(4.27 * var(--mobile-unit)));
     }
 
     .service-card-link {
         align-self: center;
-        min-width: 33.33vw;
-        font-size: max(15px, 4.53vw);
+        min-width: calc(33.33 * var(--mobile-unit));
+        font-size: max(15px, calc(4.53 * var(--mobile-unit)));
     }
 
     :root {
@@ -1365,32 +1366,32 @@ button:focus-visible {
 
     .intro {
         display: block;
-        padding: 0 4.4vw 11.2vw;
+        padding: 0 calc(4.4 * var(--mobile-unit)) calc(11.2 * var(--mobile-unit));
     }
 
     .intro::before {
     background: url('../images/decor/diamonds-gray.png') no-repeat;
     background-size: cover;
-    width: 36.07vw;
+    width: calc(36.07 * var(--mobile-unit));
     clip-path: none;
-    transform: translateX(-2vw);
+    transform: translateX(calc(-2 * var(--mobile-unit)));
 }
 
     .intro-title {
-        padding-top: 16.3vw;
-        padding-left: 29.2vw;
-        min-height: 70.4vw;
+        padding-top: calc(16.3 * var(--mobile-unit));
+        padding-left: calc(29.2 * var(--mobile-unit));
+        min-height: calc(70.4 * var(--mobile-unit));
     }
 
     .intro-title-en {
-        font-size: 6.93vw;
+        font-size: calc(6.93 * var(--mobile-unit));
         line-height: 1.5;
         white-space: nowrap;
     }
 
     .intro .intro-title-ja {
-        margin-top: .8vw;
-        font-size: 5.33vw;
+        margin-top: calc(.8 * var(--mobile-unit));
+        font-size: calc(5.33 * var(--mobile-unit));
         line-height: 1.6;
     }
 
@@ -1401,29 +1402,29 @@ button:focus-visible {
 
     .intro-statement {
         color: inherit;
-        font-size: 5.6vw;
+        font-size: calc(5.6 * var(--mobile-unit));
         line-height: 1.7;
         text-align: center;
     }
 
     .intro-copy-mobile {
         display: grid;
-        margin-top: 9.6vw;
-        gap: 7.73vw;
-        font-size: 4.27vw;
+        margin-top: calc(9.6 * var(--mobile-unit));
+        gap: calc(7.73 * var(--mobile-unit));
+        font-size: calc(4.27 * var(--mobile-unit));
         line-height: 1.8125;
         letter-spacing: .07em;
     }
 
     .intro-link {
-        width: 47.47vw;
-        margin: 10.4vw auto 0;
-        padding: 0 5.07vw 1.07vw 0;
-        font-size: 5.6vw;
+        width: calc(47.47 * var(--mobile-unit));
+        margin: calc(10.4 * var(--mobile-unit)) auto 0;
+        padding: 0 calc(5.07 * var(--mobile-unit)) calc(1.07 * var(--mobile-unit)) 0;
+        font-size: calc(5.6 * var(--mobile-unit));
     }
 
     .intro-link img {
-        width: 6.13vw;
+        width: calc(6.13 * var(--mobile-unit));
     }
 
     .site-header {
@@ -1443,7 +1444,7 @@ button:focus-visible {
 
     .brand-mobile img {
         display: block;
-        height: 8.5vw;
+        height: calc(8.5 * var(--mobile-unit));
         width: auto;
     }
 
@@ -1502,7 +1503,7 @@ button:focus-visible {
     .primary-navigation > ul > li > a,
     .nav-row > a,
     .submenu a {
-        min-height: calc(17.5vw - 1px);
+        min-height: calc(calc(17.5 * var(--mobile-unit)) - 1px);
         padding: 0 17px;
         justify-content: space-between;
         font-size: 17px;
@@ -1587,7 +1588,7 @@ button:focus-visible {
         display: block;
         position: absolute;
         inset: 0;
-        background: url('../images/hero/hero-photo-diamonds.png.png') 13.3vw top / 100% 100% no-repeat;
+        background: url('../images/hero/hero-photo-diamonds.png.png') calc(13.3 * var(--mobile-unit)) top / 100% 100% no-repeat;
     }
 
     .hero-mobile-art::after {
@@ -1609,9 +1610,9 @@ button:focus-visible {
     }
 
     .hero-copy p {
-        margin: 0 0 2.4vw;
+        margin: 0 0 calc(2.4 * var(--mobile-unit));
         font-family: Georgia, 'Times New Roman', serif;
-        font-size: 4.65vw;
+        font-size: calc(4.65 * var(--mobile-unit));
         font-weight: 700;
         letter-spacing: .12em;
         white-space: nowrap;
@@ -1619,7 +1620,7 @@ button:focus-visible {
 
     .hero-copy h1 {
         margin: 0;
-        font-size: 8.4vw;
+        font-size: calc(8.4 * var(--mobile-unit));
         font-weight: 700;
         line-height: 1.6;
         letter-spacing: .035em;
@@ -1632,7 +1633,221 @@ button:focus-visible {
 
     .hero-copy h1 span {
         display: block;
-        font-size: 12.8vw;
+        font-size: calc(12.8 * var(--mobile-unit));
         line-height: 1.35;
+    }
+}
+
+@media (430px < width <= 768px) {
+    :root {
+        --mobile-unit: 4.3px;
+    }
+
+    .site-header {
+        padding-inline: 24px;
+    }
+
+    .site-header .brand,
+    .footer-brand-mobile {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .site-header .brand {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        width: 44px;
+        align-items: center;
+    }
+
+    .primary-navigation > ul > li > a,
+    .nav-row > a,
+    .submenu a {
+        padding-inline: 24px;
+    }
+
+    .primary-navigation .submenu-toggle {
+        width: 60px;
+    }
+
+    .hero {
+        max-width: 520px;
+        margin-inline: auto;
+    }
+
+    .intro,
+    .service,
+    .case-study {
+        padding-inline: max(24px, calc((100% - 620px) / 2));
+    }
+
+    .intro::before {
+        left: max(3.5vw, calc((100% - 620px) / 2));
+    }
+
+    .news-list {
+        width: min(calc(100% - 48px), 620px);
+    }
+
+    .member-slider {
+        width: min(calc(100% - 112px), 620px);
+    }
+
+    .member-arrow {
+        display: grid;
+    }
+
+    .member-prev {
+        right: calc(100% + 8px);
+    }
+
+    .member-next {
+        left: calc(100% + 8px);
+    }
+}
+
+@media (768px < width < 1280px) {
+    body {
+        padding-top: var(--header-height);
+    }
+
+    .site-header {
+        padding-inline: 24px;
+    }
+
+    .site-header .brand,
+    .footer-brand-desktop {
+        display: flex;
+        align-items: center;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .primary-navigation > ul > li > a,
+    .nav-row > a {
+        min-width: 44px;
+        font-size: max(12px, 1vw);
+    }
+
+    .hero {
+        height: auto;
+    }
+
+    .intro,
+    .case-study {
+        padding-inline: clamp(24px, 5vw, 64px);
+    }
+
+    .intro::before {
+        left: 0;
+        background-size: min(100%, 100px) auto;
+    }
+
+    .intro-title-en,
+    .intro-statement {
+        font-size: max(20px, 2.36vw);
+    }
+
+    .intro-title-ja {
+        font-size: max(16px, 1.67vw);
+    }
+
+    .intro-copy,
+    .case-card p,
+    .news-item {
+        font-size: max(14px, 1.11vw);
+    }
+
+    .service-grid,
+    .news-list {
+        width: calc(100% - 2 * clamp(24px, 5vw, 64px));
+    }
+
+    .service-card-label {
+        font-size: max(16px, 1.67vw);
+    }
+
+    .service-card-number {
+        font-size: max(12px, .7em);
+    }
+
+    .service-card-panel h3 {
+        font-size: max(16px, 1.53vw);
+    }
+
+    .service-card-panel h3 span {
+        font-size: max(22px, 2.36vw);
+    }
+
+    .case-study::before {
+        background-size: cover;
+    }
+
+    .case-tags,
+    .news-tag {
+        font-size: max(12px, .87vw);
+    }
+
+    .news-label,
+    .news-date {
+        font-size: max(14px, 1.25vw);
+    }
+
+    .news-item {
+        grid-template-columns: max(100px, 11.39vw) max-content 1fr;
+    }
+
+    .intro-link,
+    .case-study-link,
+    .members-link,
+    .news-link {
+        width: max(136px, 12.5vw);
+        font-size: max(16px, 1.81vw);
+    }
+
+    .footer-content {
+        padding-inline: 24px;
+    }
+
+    .footer-navigation {
+        font-size: max(14px, .72vw);
+    }
+
+    .footer-navigation a {
+        display: flex;
+        align-items: center;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .footer-submenu > li,
+    .footer-direct-links > li + li {
+        margin-top: 0;
+    }
+}
+
+@media (430px < width < 1280px) {
+    .intro-link,
+    .service-card-link,
+    .case-study-link,
+    .members-link,
+    .news-link {
+        min-height: 44px;
+    }
+
+    .primary-navigation a:focus-visible {
+        color: #d8cc60;
+    }
+
+    .primary-navigation .nav-contact > a:focus-visible {
+        background: #ded240;
+        color: #080d00;
+    }
+
+    .cta-link:focus-visible {
+        box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, .12);
     }
 }

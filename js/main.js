@@ -5,12 +5,18 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#primary-navigation');
 const submenuToggles = navigation.querySelectorAll('.submenu-toggle');
 const mobileViewport = window.matchMedia('(max-width: 768px)');
+const wideTabletViewport = window.matchMedia('(768px < width < 1280px)');
+const hero = document.querySelector('.hero');
 
 function syncHeaderScrollState() {
-	siteHeader.classList.toggle('is-scrolled', window.scrollY > 780);
+	const pastHero = wideTabletViewport.matches
+		? hero.getBoundingClientRect().bottom <= siteHeader.offsetHeight
+		: window.scrollY > 780;
+	siteHeader.classList.toggle('is-scrolled', pastHero);
 }
 
 window.addEventListener('scroll', syncHeaderScrollState, { passive: true });
+window.addEventListener('resize', syncHeaderScrollState);
 window.addEventListener('pageshow', syncHeaderScrollState);
 syncHeaderScrollState();
 
@@ -132,8 +138,6 @@ if (memberSlider) {
 		if (reducedMotion.matches) animation?.finish();
 	});
 
-	const mobileLayout = window.matchMedia('(max-width: 768px)');
-
 	previous.addEventListener('click', () => move(-1));
 	next.addEventListener('click', () => move(1));
 
@@ -149,7 +153,7 @@ if (memberSlider) {
 
         const isTouch = event.pointerType === 'touch';
         const isMouseDrag =
-            event.pointerType === 'mouse' && event.button === 0 && mobileLayout.matches;
+            event.pointerType === 'mouse' && event.button === 0 && mobileViewport.matches;
         if (!isTouch && !isMouseDrag) return;
 
         swipe = { id: event.pointerId, x: event.clientX, y: event.clientY };
