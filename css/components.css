@@ -1,0 +1,47 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid currentColor;
+}
+
+.member-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    width: max(44px, 4.2vw);
+    height: max(44px, 5.2vw);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+}
+
+.member-arrow::before {
+    content: '';
+    width: 42%;
+    height: 78%;
+    background: currentColor;
+    clip-path: polygon(84% 0, 100% 5%, 22% 50%, 100% 95%, 84% 100%, 0 50%);
+}
+
+.service-eyebrow,
+.service h2,
+.service-intro,
+.case-study-label,
+.case-study h2,
+.members-label,
+.members h2,
+.news-label,
+.news h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.case-tags li,
+.news-tag {
+    background: var(--green);
+}

@@ -1,0 +1,195 @@
+.intro {
+    position: relative;
+    display: grid;
+    grid-template-columns: 25.69vw minmax(0, 1fr);
+    overflow: hidden;
+    padding: 5.69vw 13.89vw .56vw;
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: -0.5vw;
+    left: 3.5vw;
+    width: 13.5vw;
+    aspect-ratio: 293 / 461;
+    background: url('../images/decor/diamonds-green-sp.png') left 80% / 100% auto no-repeat;
+    pointer-events: none;
+}
+
+.intro-title,
+.intro-content {
+    position: relative;
+}
+
+.intro p {
+    margin: 0;
+}
+
+.intro-title-en,
+.intro-statement {
+    font-size: 2.36vw;
+    line-height: 1.7;
+}
+
+.intro-title-ja {
+    font-size: 1.67vw;
+    line-height: 1.45;
+}
+
+.intro-statement {
+    color: var(--dark-green);
+    letter-spacing: 0;
+}
+
+.intro-blank {
+    display: inline-block;
+    width: 1.65em;
+    text-align: center;
+}
+
+.intro-copy {
+    display: grid;
+    gap: 2.01vw;
+    margin-top: 3.61vw;
+    font-size: 1.11vw;
+    line-height: 1.8125;
+}
+
+.intro-copy-mobile {
+    display: none;
+}
+
+.intro-link {
+    width: 12.5vw;
+    margin-top: 3.89vw;
+    margin-bottom: 1.25vw;
+    padding-bottom: .35vw;
+    color: var(--green);
+    font-size: 1.81vw;
+    line-height: 1.45;
+}
+
+.intro-link img {
+    width: 1.6vw;
+}
+
+.intro-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        display: block;
+        padding: 0 calc(4.4 * var(--mobile-unit)) calc(11.2 * var(--mobile-unit));
+    }
+
+    .intro::before {
+        background: url('../images/decor/diamonds-gray.png') no-repeat;
+        background-size: cover;
+        width: calc(36.07 * var(--mobile-unit));
+        clip-path: none;
+        transform: translateX(calc(-2 * var(--mobile-unit)));
+    }
+
+    .intro-title {
+        padding-top: calc(20.4 * var(--mobile-unit));
+        padding-left: calc(27.07 * var(--mobile-unit));
+        min-height: calc(71.47 * var(--mobile-unit));
+    }
+
+    .intro-title-en {
+        font-size: calc(6.67 * var(--mobile-unit));
+        line-height: 1.5;
+        letter-spacing: .055em;
+        white-space: nowrap;
+    }
+
+    .intro .intro-title-ja {
+        margin-top: calc(.8 * var(--mobile-unit));
+        font-size: calc(5.33 * var(--mobile-unit));
+        line-height: 1.6;
+    }
+
+    .intro-desktop-break,
+    .intro-copy-desktop {
+        display: none;
+    }
+
+    .intro-statement {
+        color: inherit;
+        font-size: calc(5.6 * var(--mobile-unit));
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    .intro-copy-mobile {
+        display: grid;
+        margin-top: calc(9.6 * var(--mobile-unit));
+        gap: calc(7.73 * var(--mobile-unit));
+        font-size: calc(4.27 * var(--mobile-unit));
+        line-height: 1.8125;
+        letter-spacing: .07em;
+    }
+
+    .intro-link {
+        width: calc(47.47 * var(--mobile-unit));
+        margin: calc(10.4 * var(--mobile-unit)) auto 0;
+        padding: 0 calc(5.07 * var(--mobile-unit)) calc(1.07 * var(--mobile-unit)) 0;
+        font-size: calc(5.6 * var(--mobile-unit));
+    }
+
+    .intro-link img {
+        width: calc(6.13 * var(--mobile-unit));
+    }
+}
+
+@media (430px < width <= 768px) {
+    .intro {
+        padding-inline: max(24px, calc((100% - 620px) / 2));
+    }
+
+    .intro::before {
+        left: max(3.5vw, calc((100% - 620px) / 2));
+    }
+}
+
+@media (768px < width < 1280px) {
+    .intro {
+        padding-inline: clamp(24px, 5vw, 64px);
+    }
+
+    .intro::before {
+        left: 0;
+        background-size: min(100%, 100px) auto;
+    }
+
+    .intro-title-en,
+    .intro-statement {
+        font-size: max(20px, 2.36vw);
+    }
+
+    .intro-title-ja {
+        font-size: max(16px, 1.67vw);
+    }
+
+    .intro-copy {
+        font-size: max(14px, 1.11vw);
+    }
+
+    .intro-link {
+        width: max(136px, 12.5vw);
+        font-size: max(16px, 1.81vw);
+    }
+}
+
+@media (430px < width < 1280px) {
+    .intro-link {
+        min-height: 44px;
+    }
+}

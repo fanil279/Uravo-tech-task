@@ -1,0 +1,262 @@
+.service {
+    padding: 3.9vw 0 7.35vw;
+    background: var(--white) url('../images/decor/diamonds-gold.png') right 2.5vw top 5.55vw / 17.9vw auto no-repeat;
+    color: var(--dark-green);
+    font-weight: 700;
+}
+
+.service-eyebrow {
+    color: var(--gold);
+    font-size: max(15px, 1.11vw);
+    letter-spacing: .055em;
+}
+
+.service h2 {
+    margin-top: .09em;
+    color: var(--green);
+    font-size: 3.42vw;
+    line-height: 1.1;
+    letter-spacing: .035em;
+}
+
+.service-intro {
+    margin: 5.6vw auto .94vw;
+    max-width: 72vw;
+    font-size: max(14px, 1.25vw);
+    line-height: 1.8;
+    letter-spacing: .06em;
+}
+
+.service-intro-mobile {
+    display: none;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3.47vw;
+    width: 72%;
+    margin-inline: auto;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.service-card-visual {
+    position: relative;
+}
+
+.service-card-visual > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 488 / 255;
+    object-fit: cover;
+}
+
+.service-card-label {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: .65vw .6vw;
+    background: var(--dark-green);
+    font-size: 1.67vw;
+    line-height: 1.35;
+}
+
+.service-card-number {
+    margin-right: .45em;
+    font-size: .7em;
+    letter-spacing: .06em;
+}
+
+.service-card-number strong {
+    font-size: 1.43em;
+}
+
+.service-card-panel {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: -2.15vw 5.2% 0;
+    padding: 3.2vw 2.7vw 1.17vw;
+    position: relative;
+    border: 1px solid var(--green);
+    background: radial-gradient(ellipse at 0 0, #24570f, transparent 52%),
+    linear-gradient(110deg, #041000 33%, #293c25);
+}
+
+.service-card-panel h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.53vw;
+    line-height: 1.35;
+}
+
+.service-card-panel h3 span {
+    display: block;
+    margin-top: .48em;
+    font-size: 2.36vw;
+}
+
+.service-card-panel p {
+    margin: 1.1vw 0 2vw;
+    font-size: max(14px, 1.11vw);
+    line-height: 1.82;
+}
+
+.service-card-link {
+    gap: 1em;
+    align-self: flex-end;
+    min-width: 8.7vw;
+    margin-top: auto;
+    padding-bottom: .14em;
+    font-size: max(15px, 1.18vw);
+    letter-spacing: .06em;
+}
+
+.service-card-link img {
+    width: 1em;
+    filter: brightness(0) invert(1);
+}
+
+.service-card-link:focus-visible {
+    outline-offset: 4px;
+}
+
+@media (min-width: 1280px) {
+    .service-eyebrow,
+    .service h2 {
+        padding-inline-start: .92vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .service {
+        padding: 0 calc(4.27 * var(--mobile-unit)) calc(11 * var(--mobile-unit));
+        background-color: var(--paper);
+        background-position: right top;
+        background-size: calc(16 * var(--mobile-unit)) auto;
+        background-image: none;
+    }
+
+    .service h2 {
+        margin-top: .14em;
+        font-size: calc(9.33 * var(--mobile-unit));
+    }
+
+    .service-eyebrow {
+        font-size: max(15px, calc(4.27 * var(--mobile-unit)));
+    }
+
+    .service-intro-desktop {
+        display: none;
+    }
+
+    .service-intro-mobile {
+        display: block;
+        max-width: none;
+        margin: calc(12 * var(--mobile-unit)) 0 calc(9 * var(--mobile-unit));
+        text-align: left;
+        font-size: max(15px, calc(4.8 * var(--mobile-unit)));
+    }
+
+    .service-grid {
+        grid-template-columns: minmax(0, 1fr);
+        width: auto;
+        gap: calc(8.53 * var(--mobile-unit));
+    }
+
+    .service-card-visual {
+        background: url('../images/service/service-mobile.jpg') center / cover no-repeat;
+    }
+
+    .service-card-visual > img {
+        opacity: 0;
+    }
+
+    .service-card-label {
+        position: relative;
+        padding: .2em .55em;
+        font-size: max(14px, calc(4.8 * var(--mobile-unit)));
+        background: var(--ink);
+    }
+
+    .service-card-number {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        padding: .42em .6em;
+        background: inherit;
+        font-size: .9em;
+    }
+
+    .service-card-number strong {
+        font-size: inherit;
+    }
+
+    .service-card-panel {
+        margin: 0;
+        padding: calc(9.6 * var(--mobile-unit)) calc(4.53 * var(--mobile-unit)) calc(8 * var(--mobile-unit));
+        border: 0;
+        background: radial-gradient(ellipse at 4% 20%, #367f1b, transparent 46%),
+        linear-gradient(110deg, #041000 40%, #293c25);
+    }
+
+    .service-card-panel h3 {
+        font-size: max(15px, calc(4.53 * var(--mobile-unit)));
+    }
+
+    .service-card-panel h3 span {
+        font-size: calc(7.2 * var(--mobile-unit));
+    }
+
+    .service-card-panel p {
+        margin: calc(4.8 * var(--mobile-unit)) 0 calc(8.5 * var(--mobile-unit));
+        font-size: max(14px, calc(4.27 * var(--mobile-unit)));
+    }
+
+    .service-card-link {
+        align-self: center;
+        min-width: calc(33.33 * var(--mobile-unit));
+        font-size: max(15px, calc(4.53 * var(--mobile-unit)));
+    }
+}
+
+@media (430px < width <= 768px) {
+    .service {
+        padding-inline: max(24px, calc((100% - 620px) / 2));
+    }
+}
+
+@media (768px < width < 1280px) {
+    .service-grid {
+        width: calc(100% - 2 * clamp(24px, 5vw, 64px));
+    }
+
+    .service-card-label {
+        font-size: max(16px, 1.67vw);
+    }
+
+    .service-card-number {
+        font-size: max(12px, .7em);
+    }
+
+    .service-card-panel h3 {
+        font-size: max(16px, 1.53vw);
+    }
+
+    .service-card-panel h3 span {
+        font-size: max(22px, 2.36vw);
+    }
+}
+
+@media (430px < width < 1280px) {
+    .service-card-link {
+        min-height: 44px;
+    }
+}

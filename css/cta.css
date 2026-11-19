@@ -1,0 +1,91 @@
+.cta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cta-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(16px, 1.98vw, 32px);
+    min-height: clamp(170px, 17.6vw, 340px);
+    padding: 0 13.9% 1vw;
+    color: var(--paper);
+    background: var(--cta-overlay), var(--cta-image) center / cover no-repeat;
+    background-color: var(--cta-color);
+    box-shadow: inset 0 0 0 100vmax transparent;
+}
+
+.cta-link.cta-recruit {
+    --cta-image: url('../images/menu/btn-recruit-sp.jpg');
+    --cta-color: #494949;
+    --cta-overlay: linear-gradient(rgb(79 79 79 / .91), rgb(79 79 79 / .91));
+}
+
+.cta-link.cta-contact {
+    --cta-image: url('../images/menu/btn-contact-sp.jpg');
+    --cta-color: #65591a;
+    --cta-overlay: linear-gradient(rgb(181 164 37 / .86), rgb(99 89 24 / .86));
+    color: var(--white);
+}
+
+.cta-label {
+    font-size: clamp(.875rem, 1.11vw, 1.25rem);
+    font-weight: 700;
+    letter-spacing: .05em;
+}
+
+.cta h2 {
+    margin: 0;
+    font-size: clamp(2rem, 3.33vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: .05em;
+}
+
+@media (hover: hover) {
+    .cta-link:hover {
+        box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, .12);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .cta-link {
+        transition: box-shadow var(--cta-transition) ease;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-link {
+        min-height: max(170px, calc(56 * var(--mobile-unit)));
+        padding-inline: 9.6%;
+        padding-bottom: calc(8.48 * var(--mobile-unit));
+        gap: 16px;
+        color: var(--white);
+    }
+
+    .cta-label {
+        font-size: calc(4.27 * var(--mobile-unit));
+    }
+
+    .cta h2 {
+        font-size: clamp(2rem, calc(8.53 * var(--mobile-unit)), 3.125rem);
+    }
+
+    .cta-link.cta-recruit {
+        --cta-overlay: linear-gradient(rgb(84 84 84 / .91), rgb(84 84 84 / .91));
+    }
+
+    .cta-link.cta-contact {
+        --cta-overlay: linear-gradient(rgb(96 88 26 / .86), rgb(94 85 24 / .84));
+    }
+}
+
+@media (430px < width < 1280px) {
+    .cta-link:focus-visible {
+        box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, .12);
+    }
+}

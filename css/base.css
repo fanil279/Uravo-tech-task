@@ -1,0 +1,99 @@
+:root {
+    --font-serif: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif CJK JP", serif;
+    --font-logo: Georgia, serif;
+    --ink: #000;
+    --paper: #fff;
+    --dark-green: #030d00;
+    --divider: #7c7c7c;
+    --nav-hover-text: #d8cc60;
+    --nav-hover-gold: #ded240;
+    --nav-contact-text: #080d00;
+    --nav-transition: .18s;
+    --cta-transition: .2s;
+    --mobile-unit: 1vw;
+    color-scheme: light;
+    --green: #082600;
+    --gold: #c6b419;
+    --white: #ebebeb;
+    --header-height: max(54px, 3.75vw);
+}
+
+html {
+    scroll-padding-top: var(--header-height);
+}
+
+[id][tabindex="-1"]:focus-visible {
+    outline-offset: -3px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--green);
+    color: var(--white);
+    font-family: var(--font-serif);
+}
+
+:where(img) {
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--paper);
+    outline-offset: -5px;
+}
+
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 100;
+    padding: 12px;
+    background: var(--paper);
+    color: var(--green);
+    transform: translateY(-160%);
+}
+
+.skip-link:focus {
+    transform: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 60px;
+    }
+
+    body {
+        padding-top: var(--header-height);
+    }
+}
+
+@media (430px < width <= 768px) {
+    :root {
+        --mobile-unit: 4.3px;
+    }
+}

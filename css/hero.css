@@ -1,0 +1,150 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    aspect-ratio: 1440 / 786;
+    background: var(--green) url('../images/hero/hero-photo-bg.png') center / 100% 100% no-repeat;
+    overflow: hidden;
+}
+
+.hero-copy {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.hero-mobile-art {
+    display: none;
+}
+
+.logo-slider {
+    --logo-width: max(112px, 12.43vw);
+    --logo-gap: max(24px, 4.24vw);
+    height: calc(var(--logo-width) / 1.59);
+    overflow: hidden;
+    padding: clamp(20px, 2.15vw, 48px) 0 clamp(12px, 0.84vw, 20px);
+    background: var(--white);
+}
+
+.logo-slider-track {
+    display: flex;
+    width: max-content;
+    margin-left: calc(var(--logo-width) / -2);
+}
+
+.logo-slider-group {
+    display: flex;
+    flex: none;
+    gap: var(--logo-gap);
+    padding-right: var(--logo-gap);
+}
+
+.logo-slider-group img {
+    display: block;
+    width: var(--logo-width);
+    aspect-ratio: 179 / 54;
+    object-fit: contain;
+}
+
+@keyframes logo-slider-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo-slider-track.is-looping {
+        animation: logo-slider-scroll 36s linear infinite;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-slider-track.is-looping {
+        animation: none;
+    }
+
+    .logo-slider-group + .logo-slider-group {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    .logo-slider {
+        overflow-x: auto;
+    }
+
+    .logo-slider-track {
+        margin-left: 0;
+        padding-left: var(--logo-gap);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        aspect-ratio: 750 / 1228;
+        background-image: radial-gradient(ellipse at 12% 35%, #308b16 0%, #1c590d 22%, transparent 50%), linear-gradient(105deg, #123508, #031000 55%, #293e25);
+        height: auto;
+    }
+
+    .hero-mobile-art {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background: url('../images/hero/hero-photo-diamonds.png') calc(13.3 * var(--mobile-unit)) top / 100% 100% no-repeat;
+    }
+
+    .hero-mobile-art::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgb(8 38 0 / .15);
+    }
+
+    .hero-copy {
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip-path: none;
+        white-space: normal;
+        left: 4.5%;
+        right: 3%;
+        top: 56.1%;
+    }
+
+    .hero-copy p {
+        margin: 0 0 calc(2.4 * var(--mobile-unit));
+        font-size: calc(4.53 * var(--mobile-unit));
+        font-weight: 700;
+        letter-spacing: .09em;
+        white-space: nowrap;
+    }
+
+    .hero-copy h1 {
+        margin: 0;
+        font-size: calc(8.4 * var(--mobile-unit));
+        font-weight: 700;
+        line-height: 1.6;
+        letter-spacing: .035em;
+        color: #e8e8e5;
+        background: linear-gradient(#f2f2ef 20%, #a7aaa3 95%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-copy h1 span {
+        display: block;
+        font-size: calc(12.8 * var(--mobile-unit));
+        line-height: 1.35;
+    }
+}
+
+@media (768px < width < 1280px) {
+    .hero {
+        height: auto;
+        margin-top: -30px;
+    }
+}
