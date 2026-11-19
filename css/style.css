@@ -789,6 +789,81 @@ button:focus-visible {
     outline-color: var(--green);
 }
 
+.cta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cta-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(16px, 1.65vw, 32px);
+    min-height: clamp(170px, 17.6vw, 340px);
+    padding: 24px 13.9%;
+    color: #fff;
+    background: var(--cta-overlay), var(--cta-image) center / cover no-repeat;
+    background-color: var(--cta-color);
+    box-shadow: inset 0 0 0 100vmax transparent;
+}
+
+.cta-link#recruit {
+    --cta-image: url('../images/menu/btn-recruit-sp.jpg');
+    --cta-color: #494949;
+    --cta-overlay: linear-gradient(rgba(68, 68, 68, .78), rgba(68, 68, 68, .78));
+}
+
+.cta-link#contact {
+    --cta-image: url('../images/menu/btn-contact-sp.jpg');
+    --cta-color: #65591a;
+    --cta-overlay: linear-gradient(rgba(145, 126, 18, .83), rgba(91, 80, 16, .88));
+}
+
+.cta-label {
+    font-size: clamp(.875rem, 1.11vw, 1.25rem);
+    font-weight: 700;
+    letter-spacing: .05em;
+}
+
+.cta h2 {
+    margin: 0;
+    font-size: clamp(2rem, 3.47vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: .05em;
+}
+
+@media (hover: hover) {
+    .cta-link:hover {
+        box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, .12);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .cta-link {
+        transition: box-shadow .2s ease;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-link {
+        min-height: max(170px, 56vw);
+        padding-inline: 9.6%;
+        gap: 16px;
+    }
+
+    .cta h2 {
+        font-size: clamp(2rem, 9.07vw, 3.125rem);
+    }
+
+    .cta-link#contact {
+        --cta-overlay: linear-gradient(rgba(98, 86, 18, .82), rgba(98, 86, 18, .82));
+    }
+}
+
 [hidden] {
     display: none !important;
 }
