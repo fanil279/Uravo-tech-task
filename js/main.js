@@ -71,6 +71,14 @@ document.addEventListener('keydown', (event) => {
 
 mobileViewport.addEventListener('change', () => setMenuOpen(false));
 
+document.querySelectorAll('.footer-toggle').forEach((button) => {
+	button.addEventListener('click', () => {
+		const expanded = button.getAttribute('aria-expanded') === 'true';
+		button.setAttribute('aria-expanded', String(!expanded));
+	});
+	button.hidden = false;
+});
+
 const logoTrack = document.querySelector('.logo-slider-track');
 if (logoTrack) {
 	logoTrack.append(logoTrack.firstElementChild.cloneNode(true));
