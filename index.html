@@ -8,11 +8,11 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/main.js" defer></script>
 </head>
-<body>
+<body id="top" tabindex="-1">
 	<a class="skip-link" href="#main">メインコンテンツへ</a>
 
 	<header class="site-header">
-		<a class="brand" href="./" aria-label="ホーム">
+		<a class="brand" href="#top" aria-label="ホーム">
 			<span class="brand-desktop" aria-hidden="true">
 				<svg viewBox="0 0 52 48" fill="none">
 					<path d="M13 3 38 4 50 24 38 44 13 44 1 24Z M18 1 41 10 46 33 28 47 6 37 4 14Z M10 7 34 2 49 20 41 42 18 47 3 29Z" stroke="currentColor" stroke-width=".6"/>
@@ -34,38 +34,38 @@
 			<ul>
 				<li>
 					<div class="nav-row">
-						<a href="./company/"><span class="nav-company-desktop">会社紹介</span><span class="nav-company-mobile">会社情報</span></a>
+						<a href="#company"><span class="nav-company-desktop">会社紹介</span><span class="nav-company-mobile">会社情報</span></a>
 						<button class="submenu-toggle" type="button" aria-label="会社情報の項目を開く" aria-expanded="false" aria-controls="company-links">+</button>
 					</div>
 
 					<ul class="submenu" id="company-links" hidden>
-						<li><a href="./company/">会社概要</a></li>
-						<li><a href="./company/policy/">行動指針・経営方針</a></li>
-						<li><a href="./company/message/">代表挨拶</a></li>
-						<li><a href="./company/member/">メンバー</a></li>
+						<li><a href="#company">会社概要</a></li>
+						<li><a href="#company">行動指針・経営方針</a></li>
+						<li><a href="#company">代表挨拶</a></li>
+						<li><a href="#members">メンバー</a></li>
 					</ul>
 				</li>
 				<li>
 					<div class="nav-row">
-						<a href="./service/">サービス</a>
+						<a href="#service">サービス</a>
 						<button class="submenu-toggle" type="button" aria-label="サービスの項目を開く" aria-expanded="false" aria-controls="service-links">+</button>
 					</div>
 					<ul class="submenu" id="service-links" hidden>
-						<li><a href="./service/zero-sales/">ZERO SALES</a></li>
-						<li><a href="./service/zero-marketing/">ZERO MARKETING</a></li>
-						<li><a href="./service/zero-promotion/">ZERO PROMOTION</a></li>
-						<li><a href="./service/zero-unit/">ZERO UNIT</a></li>
+						<li><a href="#zero-sales">ZERO SALES</a></li>
+						<li><a href="#zero-marketing">ZERO MARKETING</a></li>
+						<li><a href="#zero-promotion">ZERO PROMOTION</a></li>
+						<li><a href="#zero-unit">ZERO UNIT</a></li>
 					</ul>
 				</li>
-				<li><a href="./case/">導入事例</a></li>
-				<li><a href="./news/">お知らせ</a></li>
-				<li class="nav-recruit"><a href="./recruit/">採用情報</a></li>
-				<li class="nav-contact"><a href="./contact/">お問い合わせ</a></li>
+				<li><a href="#case-study">導入事例</a></li>
+				<li><a href="#news">お知らせ</a></li>
+				<li class="nav-recruit"><a href="#recruit">採用情報</a></li>
+				<li class="nav-contact"><a href="#contact">お問い合わせ</a></li>
 			</ul>
 		</nav>
 	</header>
 
-	<main id="main">
+	<main id="main" tabindex="-1">
 		<section class="hero" aria-labelledby="hero-title">
 			<div class="hero-mobile-art" aria-hidden="true"></div>
 			<div class="hero-copy">
@@ -88,7 +88,7 @@
 			</div>
 		</div>
 
-		<section class="intro" aria-labelledby="intro-title">
+		<section class="intro" id="company" tabindex="-1" aria-labelledby="intro-title">
 			<div class="intro-title" id="intro-title">
 				<p class="intro-title-en" lang="en">Create the<br class="intro-desktop-break"> Future</p>
 				<p class="intro-title-ja">未来を創造する</p>
@@ -117,14 +117,14 @@
 			</div>
 		</section>
 
-		<section class="service" aria-labelledby="service-title">
+		<section class="service" id="service" tabindex="-1" aria-labelledby="service-title">
 			<p class="service-eyebrow">事業内容</p>
 			<h2 id="service-title" lang="en">Service</h2>
 			<p class="service-intro service-intro-desktop">CTFGROUPは総合マーケティング支援事業を通して、企業様様のニーズに合わせた最適な<br>ご提案をさせていただいております。<br>「新規開拓をしたいけどノウハウがない。人的リソースが足りない。」<br>「営業チームのパフォーマンスを上げたい。」<br>CTFGROUPはそんなお悩みを持つ企業様に特化したzを行っています。</p>
 			<p class="service-intro service-intro-mobile">「人的リソースが足りない。しかし採用活動が上手く進まない...。」<br>株式会社CTF GROUPは、そんな中小零細企業に特化した新しい総合マーケティング支援を行っています。<br>新規顧客の開拓、販路拡大、代理店の開拓などの様々なニーズに対し、インバウンド・アウトバウンド施策両方を網羅している弊社だからこそ、最適なご提案が可能です。</p>
 
 			<div class="service-grid">
-				<article class="service-card">
+				<article class="service-card" id="zero-sales" tabindex="-1">
 					<div class="service-card-visual">
 						<img src="images/service/service-01.jpg" alt="" loading="lazy">
 						<p class="service-card-label"><span class="service-card-number" lang="en">Service <strong>01</strong></span><span>アウトバウンド支援</span></p>
@@ -138,7 +138,7 @@
 					</div>
 				</article>
 
-				<article class="service-card">
+				<article class="service-card" id="zero-marketing" tabindex="-1">
 					<div class="service-card-visual">
 						<img src="images/service/service-02.jpg" alt="" loading="lazy">
 						<p class="service-card-label"><span class="service-card-number" lang="en">Service <strong>02</strong></span><span>インバウンド支援</span></p>
@@ -152,7 +152,7 @@
 					</div>
 				</article>
 
-				<article class="service-card">
+				<article class="service-card" id="zero-promotion" tabindex="-1">
 					<div class="service-card-visual">
 						<img src="images/service/service-03.jpg" alt="" loading="lazy">
 						<p class="service-card-label"><span class="service-card-number" lang="en">Service <strong>03</strong></span><span>SNS運用代行支援</span></p>
@@ -166,7 +166,7 @@
 					</div>
 				</article>
 
-				<article class="service-card">
+				<article class="service-card" id="zero-unit" tabindex="-1">
 					<div class="service-card-visual">
 						<img src="images/service/service-04.jpg" alt="" loading="lazy">
 						<p class="service-card-label"><span class="service-card-number" lang="en">Service <strong>04</strong></span><span>クラウドソーシング活用支援</span></p>
@@ -182,7 +182,7 @@
 			</div>
 		</section>
 		
-		<section class="case-study" aria-labelledby="case-study-title">
+		<section class="case-study" id="case-study" tabindex="-1" aria-labelledby="case-study-title">
 			<p class="case-study-label">導入事例</p>
 			<h2 id="case-study-title" lang="en">Case Study</h2>
 
@@ -229,7 +229,7 @@
 			</a>
 		</section>
 
-		<section class="members" aria-labelledby="members-title">
+		<section class="members" id="members" tabindex="-1" aria-labelledby="members-title">
 			<p class="members-label">メンバー</p>
 			<h2 id="members-title" lang="en">Member</h2>
 
@@ -273,7 +273,7 @@
 				View More <img src="images/icons/arrow-right.svg" alt="">
 			</a>
 		</section>
-		<section class="news" id="news" aria-labelledby="news-title">
+		<section class="news" id="news" tabindex="-1" aria-labelledby="news-title">
 			<p class="news-label">お知らせ</p>
 			<h2 id="news-title" lang="en">NEWS</h2>
 
@@ -314,11 +314,11 @@
 		</section>
 		
 		<div class="cta">
-			<a class="cta-link" id="recruit" href="./recruit/">
+			<a class="cta-link" id="recruit" tabindex="-1" href="./recruit/">
 				<span class="cta-label">採用情報</span>
 				<h2 lang="en">Recruit</h2>
 			</a>
-			<a class="cta-link" id="contact" href="./contact/">
+			<a class="cta-link" id="contact" tabindex="-1" href="./contact/">
 				<span class="cta-label">お問い合わせ</span>
 				<h2 lang="en">Contact</h2>
 			</a>
@@ -327,7 +327,7 @@
 
 	<footer class="site-footer">
 		<div class="footer-content">
-			<a class="brand footer-brand-desktop" href="./" aria-label="ホーム">
+			<a class="brand footer-brand-desktop" href="#top" aria-label="ホーム">
 				<span class="brand-desktop" aria-hidden="true">
 					<svg viewBox="0 0 52 48" fill="none">
 						<path d="M13 3 38 4 50 24 38 44 13 44 1 24Z M18 1 41 10 46 33 28 47 6 37 4 14Z M10 7 34 2 49 20 41 42 18 47 3 29Z" stroke="currentColor" stroke-width=".6"/>
@@ -339,38 +339,38 @@
 			<nav class="footer-navigation" aria-label="フッターナビゲーション">
 				<ul class="footer-columns">
 					<li class="footer-group">
-						<a href="./service/">サービス</a>
+						<a href="#service">サービス</a>
 						<button class="footer-toggle" type="button" aria-label="サービスの項目" aria-expanded="false" aria-controls="footer-service-links" hidden></button>
 						<ul class="footer-submenu" id="footer-service-links">
-							<li><a href="./service/zero-sales/" aria-label="ゼロセールス">メニュー</a></li>
-							<li><a href="./service/zero-marketing/" aria-label="ゼロマーケティング">メニュー</a></li>
-							<li><a href="./service/zero-promotion/" aria-label="ゼロプロモーション">メニュー</a></li>
-							<li><a href="./service/zero-unit/" aria-label="ゼロユニット">メニュー</a></li>
+							<li><a href="#zero-sales" aria-label="ゼロセールス">メニュー</a></li>
+							<li><a href="#zero-marketing" aria-label="ゼロマーケティング">メニュー</a></li>
+							<li><a href="#zero-promotion" aria-label="ゼロプロモーション">メニュー</a></li>
+							<li><a href="#zero-unit" aria-label="ゼロユニット">メニュー</a></li>
 						</ul>
 					</li>
 					<li class="footer-group">
-						<a href="./company/">会社情報</a>
+						<a href="#company">会社情報</a>
 						<button class="footer-toggle" type="button" aria-label="会社情報の項目" aria-expanded="false" aria-controls="footer-company-links" hidden></button>
 						<ul class="footer-submenu" id="footer-company-links">
-							<li><a href="./company/">会社概要</a></li>
-							<li><a href="./company/policy/">行動指針・経営方針</a></li>
-							<li><a href="./company/message/">代表挨拶</a></li>
-							<li><a href="./company/member/">メンバー</a></li>
+							<li><a href="#company">会社概要</a></li>
+							<li><a href="#company">行動指針・経営方針</a></li>
+							<li><a href="#company">代表挨拶</a></li>
+							<li><a href="#members">メンバー</a></li>
 						</ul>
 					</li>
 					<li>
 						<ul class="footer-direct-links">
-							<li><a href="./case/"><span class="footer-case-desktop">事例</span><span class="footer-case-mobile">導入事例</span></a></li>
-							<li><a href="./news/">お知らせ</a></li>
-							<li><a href="./recruit/">採用情報</a></li>
-							<li><a href="./contact/">お問い合わせ</a></li>
+							<li><a href="#case-study"><span class="footer-case-desktop">事例</span><span class="footer-case-mobile">導入事例</span></a></li>
+							<li><a href="#news">お知らせ</a></li>
+							<li><a href="#recruit">採用情報</a></li>
+							<li><a href="#contact">お問い合わせ</a></li>
 						</ul>
 					</li>
 					<li><a href="./privacy-policy/">プライバシーポリシー</a></li>
 				</ul>
 			</nav>
 			
-			<a class="brand footer-brand-mobile" href="./" aria-label="ホーム">
+			<a class="brand footer-brand-mobile" href="#top" aria-label="ホーム">
 				<span class="brand-mobile">
 					<img src="images/Logo.svg" alt="" width="180" height="60">
 				</span>
@@ -378,7 +378,7 @@
 		</div>
 
 		<div class="footer-copyright">
-			<a href="./">
+			<a href="#top">
 				<span class="footer-copyright-desktop">© copyright 2024 Uラボ FE LLC</span>
 				<span class="footer-copyright-mobile" lang="en">© copyright 2024 CTF group</span>
 			</a>

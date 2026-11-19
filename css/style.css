@@ -4,7 +4,20 @@
     --gold: #c4b70e;
     --white: #eeeee8;
     --header-height: max(54px, 3.75vw);
+}
+
+html {
     scroll-padding-top: var(--header-height);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+[id][tabindex="-1"]:focus-visible {
+    outline-offset: -3px;
 }
 
 * {

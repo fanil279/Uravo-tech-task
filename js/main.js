@@ -3,6 +3,7 @@
 const siteHeader = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#primary-navigation');
+const submenuToggles = navigation.querySelectorAll('.submenu-toggle');
 const mobileViewport = window.matchMedia('(max-width: 768px)');
 
 function syncHeaderScrollState() {
@@ -20,6 +21,10 @@ function setMenuOpen(open, returnFocus = false) {
 	navigation.classList.toggle('is-open', open);
 	document.body.classList.toggle('menu-open', open);
 
+	if (!open) {
+		submenuToggles.forEach((button) => setSubmenuOpen(button, false));
+	}
+
 	if (returnFocus) menuToggle.focus();
 }
 
@@ -27,26 +32,26 @@ menuToggle.addEventListener('click', () => {
 	setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
 });
 
-document.querySelectorAll('.submenu-toggle').forEach((button) => {
+function setSubmenuOpen(button, open) {
+	button.setAttribute('aria-expanded', String(open));
+	button.textContent = open ? '−' : '+';
+	button.setAttribute(
+		'aria-label',
+		button.getAttribute('aria-label').replace(/(?:開く|閉じる)$/, open ? '閉じる' : '開く')
+	);
+	document.getElementById(button.getAttribute('aria-controls')).hidden = !open;
+}
+
+submenuToggles.forEach((button) => {
 	button.addEventListener('click', () => {
-		const expanded = button.getAttribute('aria-expanded') !== 'true';
-
-		button.setAttribute('aria-expanded', String(expanded));
-		button.textContent = expanded ? '−' : '+';
-		button.setAttribute(
-			'aria-label',
-			button.getAttribute('aria-label').replace(
-				expanded ? '開く' : '閉じる',
-				expanded ? '閉じる' : '開く'
-			)
-		);
-
-		document.getElementById(button.getAttribute('aria-controls')).hidden = !expanded;
+		setSubmenuOpen(button, button.getAttribute('aria-expanded') !== 'true');
 	});
 });
 
-navigation.addEventListener('click', (event) => {
-	if (event.target.closest('a')) setMenuOpen(false);
+siteHeader.addEventListener('click', (event) => {
+	if (event.target.closest('a') && menuToggle.getAttribute('aria-expanded') === 'true') {
+		setMenuOpen(false);
+	}
 });
 
 document.addEventListener('keydown', (event) => {
